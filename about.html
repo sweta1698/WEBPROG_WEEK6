@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About Us</title>
+    <style>
+*{
+	margin: 0; padding: 0; box-sizing: border-box;
+	font-family: "Lucida Console", Monaco, monospace;
+	line-height: 2;
+}
+      body {
+        font-size: 125%;
+		width: 100% ; height: 100vh;
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("https://www.amity.edu/raipur/images/raipur.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		text-align:center;
+
+	}
+
+#st{
+		width: 350px;
+		background: #FFF;
+		padding: 5px 1px 10px;
+		border: 1px solid #ccc;
+		margin: 20px auto 0;
+		border-radius: 5px;
+		text-align: center;
+}
+
+a{
+		display: flex;
+		align-items: center;
+}
+ul{
+  list-style-type:none;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1 id="st">About Us</h1>
+    <hr style="height:2px;border-width:0;background-color:black;">
+    <p>
+      <p>We are one of the largest, most diverse universities in India </p>
+      <p>with over 120,000 students in Delhi </p>
+      <p>and a further 50,000 studying across 190 countries </p>
+      <p>for a SAM University degree.</p>
+    </p>
+    <p>
+      Our founding members are:
+    
+    </p>
+	<script>
+
+if (window.XMLHttpRequest)
+{
+	var xmlhttp=new XMLHttpRequest();
+}
+else
+{
+	var xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET",	"xml_about.xml", false);
+xmlhttp.send();
+var xmlDoc=xmlhttp.responseXML;
+var i;
+
+
+document.write("<table border='1' width = '50%' style= 'font-size:35 px; background-color:white; margin-left:auto;  margin-right:auto;'  >");
+document.write("<tr><th>Name</th> <th>REG NO.</th> <th>Mobile No.</th></tr>");
+
+var x= xmlDoc.getElementsByTagName("r1");
+
+for (i=0;i<x.length;i++)
+{
+	
+	document.write("<tr><td>");
+	document.write(xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue);
+	document.write("</td><td>");
+	document.write(xmlDoc.getElementsByTagName("regno")[i].childNodes[0].nodeValue);
+	document.write("</td><td>");
+	document.write(xmlDoc.getElementsByTagName("mbno")[i].childNodes[0].nodeValue);
+	document.write("</td></tr>");
+	
+}
+
+document.write("</table>");
+</script>
+    <button>
+      <a href="home.html">
+        Go back
+      </a>
+    </button>
+  </body>
+</html>

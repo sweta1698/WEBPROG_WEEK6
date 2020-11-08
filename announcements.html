@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Announcements</title>
+    <style>
+*{
+	margin: 0; padding: 0; box-sizing: border-box;
+	font-family: "Lucida Console", Monaco, monospace;
+	line-height: 2;
+}
+      body {
+        font-size: 125%;
+		width: 100% ; height: 100vh;
+		background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("https://www.amity.edu/raipur/images/raipur.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		text-align:center;
+
+	}
+
+h1 {
+		width: 350px;
+		background: #FFF;
+		padding: 5px 1px 10px;
+		border: 1px solid #ccc;
+		margin: 20px auto 0;
+		border-radius: 5px;
+		text-align: center;
+}
+
+a{
+		display: flex;
+		align-items: center;
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Announcements</h1>
+    <hr style="height:2px;border-width:0;background-color:black;">
+    <p>
+      <b>Some announcements:</b>
+      <ul>
+        <li>website updated on 09-10-2020</li>
+      </ul>
+    </p>
+    <p>
+      <b>Today's date: <div id="demo"></div>
+    </p>
+    <script>
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d;
+    </script>
+    <button>
+      <a href="home.html">
+        Go back to home page
+      </a>
+    </button>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty Login</title>
+  <style>
+    body {
+      font-size: 125%;
+      background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1)), url("https://www.amity.edu/raipur/images/raipur.jpg");
+      background-repeat: no-repeat;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+    }
+    form {
+      width: 300px;
+      background: #FFF;
+      padding: 15px 40px 40px;
+      border: 1px solid #ccc;
+      margin: 50px auto 0;
+      border-radius: 5px;
+    }
+    input, select {
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 2px;
+    }
+    .row {
+      padding-bottom: 10px;
+    }
+    input[type="submit"] {
+      font-size: 110%;
+      font-weight: 100;
+      background: #006dcc;
+      border-color: #016BC1;
+      box-shadow: 0 3px 0 #0165b6;
+      color: #fff;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+  <body>
+    <h1>Faculty Portal</h1>
+    <hr style="height:2px;border-width:0;background-color:black;">
+    <button onclick="show_hide()">Login</button>
+    <div id="Login_button" style="display:none">
+      <form name="Login" onsubmit="return validate_login()">
+        <h2>FACULTY LOGIN</h2>
+        <div class="row">
+          <label for="uname">Enter username:</label><br>
+          <input type="text" id="uname" name="uname"><br>
+        </div>
+        <div class="row">
+          <label for="pw">Enter password:</label><br>
+          <input type="password" id="pw" name="pw"><br>
+        </div>
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+
+
+    <br>
+
+    <button>
+      <a href="home.html">
+        Go back
+      </a>
+    </button>
+
+    <script>
+    function show_hide()
+    {
+      var x = document.getElementById("Login_button");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+      function validate_login()
+      {
+        var name=document.Login.uname.value;
+        var pw=document.Login.pw.value;
+        //var check=new Boolean("true");
+        if(name.localeCompare("admin")!=0)
+        {
+          //check=!check;
+          alert("Invalid Username!");
+          return false;
+        }
+        else if(pw.localeCompare("admin2020")!=0)
+        {
+          //check=!check;
+          alert("Invalid Password!");
+          return false;
+        }
+        else
+        {
+          alert("Successful login!");
+        }
+        /*if(check)
+        {
+          location.replace("/student.html");
+        }*/
+      }
+    </script>
+  </body>
+</html>
